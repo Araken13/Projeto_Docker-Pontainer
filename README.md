@@ -71,7 +71,8 @@ Reconstruir tudo:
 
 bash
 docker compose up --build -d
-Ver logs:
+
+#Ver logs:
 
 bash
 docker compose logs api
