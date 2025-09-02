@@ -1,4 +1,4 @@
-# Laboratório_Docker-Pontainer - criado por Araken Neto
+# Laboratório_Docker-Portainer - criado por Araken Neto
 
 # 🚀 Projeto Docker + Docker Compose
 
