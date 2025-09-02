@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  api:
+    build: ./api-alurabooks
+    container_name: alurabooks-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./api-alurabooks:/app
+      - /app/node_modules
+    networks:
+      - alurabooks-net
+
+  frontend:
+    build: ./curso-react-alurabooks
+    container_name: alurabooks-frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./curso-react-alurabooks:/app
+      - /app/node_modules
+    depends_on:
+      - api
+    networks:
+      - alurabooks-net
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
+  portainer:
+    image: portainer/portainer-ce:latest
+    container_name: portainer
+    restart: unless-stopped
+    ports:
+      - "9000:9000"
+      - "9443:9443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+    networks:
+      - alurabooks-net
+
+volumes:
+  portainer_data:
+
+networks:
+  alurabooks-net:
+    driver: bridge
