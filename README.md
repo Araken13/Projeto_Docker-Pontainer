@@ -13,9 +13,12 @@ Este projeto demonstra como configurar e executar uma aplicação com múltiplos
 ## 📁 Estrutura do Projeto
 
 ├── api-alurabooks/ # API fake com json-server 
+
 ├── curso-react-alurabooks/ # Frontend React 
+
 ├── COMPOSES/ │ 
   └── docker-compose.yml # Arquivo principal do Docker Compose 
+  
 └── README.md
 
 
